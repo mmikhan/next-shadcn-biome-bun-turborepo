@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card } from "@repo/ui/card";
 import { Gradient } from "@repo/ui/gradient";
 import { TurborepoLogo } from "@repo/ui/turborepo-logo";
+import { Button } from "@repo/shadcn/components/button";
 
 const LINKS = [
   {
@@ -111,6 +112,12 @@ export default function Page() {
           </Card>
         ))}
       </div>
+      <Button variant={"destructive"} className="mt-8">
+        Get Started
+      </Button>
+      <Button variant={"secondary"} className="mt-8">
+        Get Started
+      </Button>
     </main>
   );
 }
