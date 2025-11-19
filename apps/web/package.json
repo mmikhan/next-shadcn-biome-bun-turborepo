@@ -7,7 +7,8 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --max-warnings 0",
+    "lint": "bun x ultracite@latest check",
+    "fix": "bun x ultracite@latest fix",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
@@ -16,9 +17,11 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "ultracite": "catalog:",
+    "@repo/shadcn": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@repo/shadcn": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/node": "^22.15.30",
     "@types/react": "catalog:",

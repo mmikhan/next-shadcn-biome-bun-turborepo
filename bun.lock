@@ -44,6 +44,7 @@
         "react-dom": "catalog:",
       },
       "devDependencies": {
+        "@biomejs/biome": "catalog:",
         "@repo/shadcn": "workspace:*",
         "@repo/tailwind-config": "workspace:*",
         "@repo/typescript-config": "workspace:*",
@@ -54,6 +55,7 @@
         "postcss": "catalog:",
         "tailwindcss": "catalog:",
         "typescript": "catalog:",
+        "ultracite": "catalog:",
       },
     },
     "packages/eslint-config": {
