@@ -22,24 +22,24 @@
     "fix": "bun x ultracite@latest fix"
   },
   "peerDependencies": {
-    "react": "^19"
+    "react": "catalog:"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "latest",
+    "lucide-react": "catalog:",
     "tailwind-merge": "^3.4.0",
     "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.6",
-    "@repo/tailwind-config": "*",
-    "@repo/typescript-config": "*",
-    "@tailwindcss/cli": "^4.1.5",
-    "@types/react": "^19.1.0",
+    "@biomejs/biome": "catalog:",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/cli": "4.1.17",
+    "@types/react": "catalog:",
     "tsc-alias": "^1.8.16",
-    "typescript": "5.9.2",
-    "ultracite": "6.3.4"
+    "typescript": "catalog:",
+    "ultracite": "catalog:"
   }
 }
