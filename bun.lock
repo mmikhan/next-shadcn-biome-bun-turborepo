@@ -107,7 +107,6 @@
       "name": "@repo/tailwind-config",
       "version": "0.0.0",
       "devDependencies": {
-        "postcss": "^8.5.3",
         "tailwindcss": "^4.1.5",
       },
     },
