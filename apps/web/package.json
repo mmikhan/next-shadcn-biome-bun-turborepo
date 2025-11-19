@@ -16,8 +16,6 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.4.6",
-    "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/shadcn": "workspace:*",
@@ -25,7 +23,6 @@
     "@types/node": "^22.15.30",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "eslint": "^9.39.1",
     "postcss": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
