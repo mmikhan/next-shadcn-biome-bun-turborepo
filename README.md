@@ -1,58 +1,20 @@
-# Turborepo Tailwind CSS starter
+# Next.js ShadCN Biome Bun Turborepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+> ShadCN Compiled Package Setup with project specific Biome configuration using Ultracite
 
-## Using this example
+It's a result of my recent interest of learning Turborepo + Monorepo setup. While setting up everything, I realized the default ShadCN monorepo is a Just-In-Time package setup whereas, Turborepo itself [recommends](https://turborepo.com/docs/core-concepts/internal-packages#compiled-packages) a Compiled package setup. Both approaches have their pros and cons. There's nothing wrong or right with either of them. It depends on the project's requirements and preferences.
 
-Run the following command:
+## Just-In-Time vs Compiled Packages
 
-```sh
-npx create-turbo@latest -e with-tailwind
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+- When using Just-In-Time internal UI package, Turbo can still cache the consuming app built but that's most likely going to change a lot since this is where you are going to work and make changes. Since Turbo couldn't cache the internal UI built output, built time is going up a little every time building the consuming app.
+- When using the Compiled package building the internal UI package using it's own build script, Turbo can cache the built output. i.e.: `/dist`.
+- When using the compiled internal UI package, that means we are also duplicating the CSS classes from the internal package itself and as well as the consuming app. One way we could avoid this is by not building the styles from the internal UI package but use the `@source` directive inside the stylesheet from Tailwind CSS from the consuming app so only one set of styles are being generated from the consumed level. ShadCN UI's default monorepo does the opposite. It scans the CSS selectors from outside of the internal UI package. That also works but again, we miss the Turbo build cache for the internal UI package CSS output.
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
 - `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
 - `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/shadcn`: `shadcn` compiled package configurations
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting

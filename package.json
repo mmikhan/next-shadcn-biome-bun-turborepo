@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwind",
+  "name": "next-shadcn-biome-bun-turborepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
