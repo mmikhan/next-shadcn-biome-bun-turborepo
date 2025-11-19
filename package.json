@@ -6,12 +6,9 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "fix": "turbo run fix",
-    "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "check-types": "turbo run check-types"
   },
   "devDependencies": {
-    "prettier": "^3.6.0",
-    "prettier-plugin-tailwindcss": "^0.7.1",
     "turbo": "^2.6.1"
   },
   "engines": {
