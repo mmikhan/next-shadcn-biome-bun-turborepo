@@ -13,6 +13,8 @@
     "fix": {
       "dependsOn": ["^fix"]
     },
+    "//#lint:root": {},
+    "//#fix:root": {},
     "check-types": {
       "dependsOn": ["^check-types"]
     },

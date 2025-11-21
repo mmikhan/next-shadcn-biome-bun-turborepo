@@ -4,11 +4,16 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "fix": "turbo run fix",
+    "lint": "turbo run lint lint:root",
+    "fix": "turbo run fix fix:root",
+    "lint:root": "bun x ultracite@latest check",
+    "fix:root": "bun x ultracite@latest fix",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "ultracite": "catalog:",
+    "lefthook": "^2.0.4",
     "turbo": "^2.6.1"
   },
   "engines": {
